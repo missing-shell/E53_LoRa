@@ -1,15 +1,25 @@
 #include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
-#include "driver/spi_master.h"
-#include "driver/gpio.h"
-#include "sdkconfig.h"
 #include "esp_log.h"
+#include "lora.h"
 
-static const char *TAG = "MAIN";
+void task_tx(void *p)
+{
+    for (;;)
+    {
+
+        vTaskDelay(pdMS_TO_TICKS(5000));
+        lora_send_packet((uint8_t *)"Hello", 5);
+        ESP_LOGI("TEST", "packet sent...");
+    }
+}
 
 void app_main()
 {
+    lora_init();
+    lora_set_frequency(433e6);
+    lora_enable_crc();
+
+    xTaskCreate(&task_tx, "task_tx", 2048, NULL, 5, NULL);
 }
