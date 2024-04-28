@@ -1,4 +1,4 @@
-# IntoRobot_L8
+# LoRa_sx1278
 
 | Supported Targets | ESP32 | ESP32-C2 | ESP32-C3 | ESP32-C6 | ESP32-H2 | ESP32-S2 | ESP32-S3 |
 | ----------------- | ----- | -------- | -------- | -------- | -------- | -------- | -------- |
@@ -6,7 +6,6 @@
 ## 使用 SPI 通信
 
 引脚连接:
-
 |InToRobot_L8| ESP32c6  |  说明   |
 |------------|----------|---------|
 | DIO0       |       | DIO 引脚映射功能 |
@@ -22,6 +21,14 @@
 | RESET      |      | 复位使能 |
 | 3.3v       | vcc      | 电源     |
 
-## 透传模式
+### [使用组件IntoRobot_L8实现LoRa透传](components/InToRobot_L8)
 
-## 进度
+引脚连接:
+|InToRobot_L8| ESP32c6  |  说明   |
+|------------|----------|---------|
+| SPI_NSS    |   23    | SPI 引脚 |
+| SPI_SCK    |   19    | SPI 引脚 |
+| SPI_MISO   |   20    | SPI 引脚 |
+| SPI_MOSI   |   18    | SPI 引脚 |
+| RESET      |   21    | 复位使能 |
+| 3.3v       |   vcc   | 电源     |
