@@ -1,3 +1,0 @@
-[submodule "component/esp32-lora-library"]
-	path = component/esp32-lora-library
-	url = git@github.com:Inteform/esp32-lora-library.git
