@@ -1,0 +1,3 @@
+[submodule "components/LoRaWAN"]
+	path = components/LoRaWAN
+	url = git@github.com:missing-shell/LoRaMac-node.git
